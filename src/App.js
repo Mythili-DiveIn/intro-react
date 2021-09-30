@@ -38,14 +38,13 @@ const App= () => {
     }
     ]
 )
+
 const addTask = (task)=> {
   const id = Math.floor(Math.random()*10000) + 1;
   console.log(id);
   const newTask = {id,...task}
   setTasks([...tasks,newTask])
   setshowAddTask(!showAddTask)
-
-
 }
 
 const onDeleteTask = (id) => {
@@ -56,9 +55,9 @@ const onDeleteTask = (id) => {
   
   return (
     <div className="container">
-     <Header showAddTask = {()=>setshowAddTask(!showAddTask)} title='Sample Program for Task Tracker'/> 
+     <Header showAddTask = {()=>setshowAddTask(!showAddTask)}  showAdd={showAddTask} title='Sample Program for Task Tracker'/> 
      {showAddTask && <AddTaskForm onAdd = {addTask}/>}
-     {tasks.length>0 ? <Tasks tasks= {tasks} onDelete={onDeleteTask}/>: 
+     {tasks.length> 0 ? <Tasks tasks= {tasks} onDelete={onDeleteTask}/>: 
      <Alert className='noTaskAlert' variant="danger" >No specific tasks available</Alert>}
     </div>
   );

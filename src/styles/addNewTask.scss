@@ -36,3 +36,12 @@
     max-width: 600px;
 
 }
+.addNewBtn{
+    max-width: 300px;
+    width: 120px;
+
+    .btn-check:focus+.btn, .btn:focus {
+         outline: none;
+         box-shadow:  none;
+    }
+}

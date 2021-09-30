@@ -4,13 +4,13 @@ import { Button } from 'react-bootstrap';
 
 
 
-const Header = ({ title , showAddTask }) => {
+const Header = ({ title , showAddTask,showAdd }) => {
 
     
     return (
         <header className = 'header'>
             <h3> {title} </h3>
-            <Button  variant="success" onClick={() =>showAddTask()}> Add new Task</Button>
+            <Button className="addNewBtn" variant={ showAdd ? "danger": 'success'} onClick={() =>showAddTask()}> { showAdd ? "Close": 'Add'}</Button>
         </header>
     )
 } 

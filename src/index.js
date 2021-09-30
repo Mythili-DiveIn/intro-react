@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Counter from '../src/components/counter'
-//import AddNewItem from '../src/components/addNewItem';
 
 ReactDOM.render(
   <React.StrictMode>
