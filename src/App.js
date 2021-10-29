@@ -4,54 +4,46 @@ import Tasks from './components/Tasks'
 import AddTaskForm from './components/addTaskForm'
 //import Counter from './components/counter'
 import { useState } from 'react'
+import { useEffect } from 'react'
 import { Alert } from 'react-bootstrap';
 
 const App= () => {
   const [showAddTask,setshowAddTask] = useState(false);
-  const [tasks, setTasks] = useState (
-    [
-
-        {
-            id:1,
-            text: 'Requirements',
-            duration: '1hr 45m'
-        },
-        {
-            id:2,
-            text: 'Define',
-            duration: '1hr'
-        },
-        {
-            id:3,
-            text: 'Design',
-            duration: '1hr 30m'
-        },
-        {
-          id:4,
-          text: 'Develop',
-          duration: '1hr 30m'
-      },
-      {
-        id:5,
-        text: 'Deploy',
-        duration: '1hr 30m'
-    }
-    ]
-)
+  const [tasks, setTasks] = useState ({});
 
 const addTask = (task)=> {
-  const id = Math.floor(Math.random()*10000) + 1;
-  console.log(id);
-  const newTask = {id,...task}
-  setTasks([...tasks,newTask])
+   /* eslint-disable no-debugger, no-console */ 
+   debugger;
+
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      "text":task['text'],
+      "duration": task['duration']
+    }),
+  };
+  fetch("http://localhost:3000/tasks", requestOptions)
+    .then((response) => response.json())
+    .then((data) => {
+    });
+
   setshowAddTask(!showAddTask)
 }
 
 const onDeleteTask = (id) => {
+   /* eslint-disable no-debugger, no-console */ 
+   debugger;
   console.log('Trying to delete')
-  setTasks(tasks.filter((task)=> task.id !== id)
-  )
+  fetch("http://localhost:3000/tasks/" + id, { method: "DELETE" },)
+    .then(() => {});
   }
+  
+  useEffect(() => {
+    fetch('http://localhost:3000/tasks')
+    .then(response => response.json())
+    .then(data => setTasks(data) );
+  }, [tasks]);
   
   return (
     <div className="container">

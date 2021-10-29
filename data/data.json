@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "text": "Requirements",
+      "duration": "1day",
+      "id": 1
+    },
+    {
+      "text": "Design",
+      "duration": "30hrs",
+      "id": 2
+    },
+    {
+      "text": "Development",
+      "duration": "40hrs",
+      "id": 3
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 
 
 
-const Header = ({ title , showAddTask,showAdd }) => {
+const Header = ({ title,showAddTask,showAdd }) => {
 
     
     return (
