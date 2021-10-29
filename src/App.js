@@ -12,9 +12,6 @@ const App= () => {
   const [tasks, setTasks] = useState ({});
 
 const addTask = (task)=> {
-   /* eslint-disable no-debugger, no-console */ 
-   debugger;
-
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -32,8 +29,6 @@ const addTask = (task)=> {
 }
 
 const onDeleteTask = (id) => {
-   /* eslint-disable no-debugger, no-console */ 
-   debugger;
   console.log('Trying to delete')
   fetch("http://localhost:3000/tasks/" + id, { method: "DELETE" },)
     .then(() => {});
