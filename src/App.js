@@ -20,7 +20,7 @@ const addTask = (task)=> {
       "duration": task['duration']
     }),
   };
-  fetch("http://localhost:3000/tasks", requestOptions)
+  fetch("https://mocki.io/v1/f74a0a9d-c106-4b6e-988a-7fa9f82ccfb6", requestOptions)
     .then((response) => response.json())
     .then((data) => {
     });
@@ -29,13 +29,15 @@ const addTask = (task)=> {
 }
 
 const onDeleteTask = (id) => {
+   /* eslint-disable no-debugger, no-console */ 
+   debugger;
   console.log('Trying to delete')
-  fetch("http://localhost:3000/tasks/" + id, { method: "DELETE" },)
+  fetch("https://mocki.io/v1/f74a0a9d-c106-4b6e-988a-7fa9f82ccfb6/" + id, { method: "DELETE" },)
     .then(() => {});
   }
   
   useEffect(() => {
-    fetch('http://localhost:3000/tasks')
+    fetch('https://mocki.io/v1/f74a0a9d-c106-4b6e-988a-7fa9f82ccfb6')
     .then(response => response.json())
     .then(data => setTasks(data) );
   }, [tasks]);
